@@ -1,0 +1,42 @@
+<template>
+    <!-- Container for mood buttons -->
+    <div class="slds-m-bottom_medium">
+
+        <!-- Button for Happy mood -->
+        <lightning-button
+            onclick={handleMoodClick}      
+            data-mood="Happy">             
+        </lightning-button>
+
+        <!-- Button for Stressed mood -->
+        <lightning-button
+            label="Stressed"
+            onclick={handleMoodClick}
+            data-mood="Stressed"
+            class="slds-m-left_small">      
+        </lightning-button>
+
+        <!-- Button for Tired mood -->
+        <lightning-button
+            label="Tired"
+            onclick={handleMoodClick}
+            data-mood="Tired"
+            class="slds-m-left_small">
+        </lightning-button>
+
+        <!-- Button for Focused mood -->
+        <lightning-button
+            label="Focused"
+            onclick={handleMoodClick}
+            data-mood="Focused"
+            class="slds-m-left_small">
+        </lightning-button>
+    </div>
+
+    <!-- Display advice only if it exists -->
+    <template if:true={advice}>
+        <p>
+            <strong>Advice:</strong> {advice} <!-- Advice received from parent -->
+        </p>
+    </template>
+</template>

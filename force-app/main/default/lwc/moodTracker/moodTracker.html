@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Smart Mood Tracker">
+
+        <!-- Padding around child component -->
+        <div class="slds-p-around_medium">
+
+            <!-- Child component -->
+            <c-mood-selector
+                advice={adviceMessage}  
+                
+                onmoodchange={handleMoodChnge}>
+
+            </c-mood-selector>
+
+        </div>
+    </lightning-card>
+</template>
+

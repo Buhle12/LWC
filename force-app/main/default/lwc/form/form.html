@@ -1,0 +1,25 @@
+<template>
+
+    <lightning-card title="User Form">
+    <div class="slds-p-around_medium">
+<lightning-input label="Name" name="name" value={name} onchange={handleChange}></lightning-input>
+
+<lightning-input label="Surname" name="surname" value={surname} onchange={handleChange}></lightning-input>
+
+<lightning-input   type="email" label="email" name="name" value={email} onchange={handleChange}></lightning-input>
+
+<lightning-input label="Name" name="name" value={name} onchange={handleChange}></lightning-input>
+
+<lightning-button label="Submit" variant="brand" class="slds-m-top_medium" onclick={handleSubmit}>
+ </lightning-button>
+
+            <template if:true={submitted}>
+                <p class="slds-m-top_medium">
+                    Hello {name} {surname}<br />
+                    Email: {email}
+                </p>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>
