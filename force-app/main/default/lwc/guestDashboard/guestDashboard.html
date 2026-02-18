@@ -1,0 +1,20 @@
+<template>
+
+    <lightning-card title="Guest Management Dashboard">
+        <lightning-datatable
+            key-field="Id"
+            data={guestStays}
+            columns={columns}
+            onrowaction={handleRowAction}>
+        </lightning-datatable>
+
+        <template if:true={selectedGuestStay}>
+            <c-guest-details 
+                guest-stay-id={selectedGuestStay.Id}
+                onupdate={handleGuestUpdate}>
+            </c-guest-details>
+        </template>
+    </lightning-card>
+
+  
+</template>

@@ -1,0 +1,54 @@
+<template>
+    <lightning-card title="Picklist Explorer" icon-name="standard:account">
+
+        <!-- Rating Picklist -->
+        <div class="slds-p-around_small">
+            <lightning-combobox
+                name="rating"
+                label="Account Rating"
+                placeholder="Select Rating"
+                options={ratingOptions}
+                value={selectedRating.value}
+                onchange={handleRatingChange}>
+            </lightning-combobox>
+
+            <template if:true={selectedRating}>
+                <p>Selected Label: {selectedRating.label}</p>
+                <p>Selected Value: {selectedRating.value}</p>
+                <p>Decision: {ratingDecision}</p>
+            </template>
+        </div>
+
+        <!-- Type Picklist -->
+        <div class="slds-p-around_small">
+            <lightning-combobox
+                name="type"
+                label="Account Type"
+                placeholder="Select Type"
+                options={typeOptions}
+                value={selectedType.value}
+                onchange={handleTypeChange}>
+            </lightning-combobox>
+
+            <template if:true={selectedType}>
+                <p>Selected Label: {selectedType.label}</p>
+                <p>Selected Value: {selectedType.value}</p>
+                <p>Decision: {typeDecision}</p>
+            </template>
+        </div>
+
+        <!-- Debug Panel -->
+        <div class="slds-box slds-theme_alert-texture slds-m-top_small">
+            <h4>Debug Panel</h4>
+            <p>Object Label: {objectLabel}</p>
+            <p>RecordTypeId Used: {recordTypeId}</p>
+            <p>Rating Values Count: {ratingCount}</p>
+            <p>Type Values Count: {typeCount}</p>
+            <template if:true={wireErrors}>
+                <p style="color:red">Wire Error: {wireErrors}</p>
+            </template>
+        </div>
+
+    </lightning-card>
+</template>
+
